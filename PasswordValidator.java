@@ -12,14 +12,14 @@ public class PasswordValidator {
         boolean hasUpper = false;
         boolean hasLower = false;
         boolean hasSpecial = false;
-        for (char c : password.toCharArray()) 
-            if (Character.isUpperCase(c)) {
+        for (char ch : password.toCharArray()) {
+            if (Character.isUpperCase(ch)) {
                 hasUpper = true;
             }
-            else if (Character.isLowerCase(c)) {
+            else if (Character.isLowerCase(ch)) {
                 hasLower = true;
             }
-            else if (!Character.isLetterOrDigit(c)) {
+            else if (!Character.isLetterOrDigit(ch)) {
                 hasSpecial = true;
             }
         }
@@ -32,7 +32,7 @@ public class PasswordValidator {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter Password: ");
-        String password = sc.nextLine().trim();   // trim removes hidden spaces
+        String password = sc.nextLine();
         if (isValidPassword(password)) {
             System.out.println("Password is VALID");
         } else {
